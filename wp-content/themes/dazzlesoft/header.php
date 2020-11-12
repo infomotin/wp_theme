@@ -58,30 +58,72 @@ wp_head();
           <div id="top-social">
             <ul>
               <li>
-                <a href="#" class="si-facebook">
-                  <span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span>
+              <?php 
+                if(get_theme_mod('dz_facebook_handle')){
+                ?>   
+               <a href="https://www.facebook.com/<?php echo get_theme_mod('dz_facebook_handle');?>" class="si-facebook">
+                  <span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">facebook</span>
                 </a>
+               
+               <?php 
+               }
+              ?>
               </li>
+
               <li>
-                <a href="#" class="si-twitter">
+              <?php 
+                if(get_theme_mod('dz_twitter_handle')){
+                ?>   
+               <a href="https://www.facebook.com/<?php echo get_theme_mod('dz_twitter_handle');?>" class="si-twitter">
                   <span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span>
                 </a>
+               
+               <?php 
+               }
+              ?>
               </li>
+
+
               <li>
-                <a href="#" class="si-instagram">
-                  <span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span>
+              <?php 
+                if(get_theme_mod('dz_instagram_handle')){
+                ?>   
+               <a href="https://www.facebook.com/<?php echo get_theme_mod('dz_instagram_handle');?>" class="si-instagram">
+                  <span class="ts-icon"><i class="icon-instagram"></i></span><span class="ts-text">instagram</span>
                 </a>
+               
+               <?php 
+               }
+              ?>
               </li>
+
+
               <li>
-                <a href="tel:+55.55.5555555" class="si-call">
-                  <span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+55.55.5555555</span>
+              <?php 
+                if(get_theme_mod('dz_email')){
+                ?>   
+               <a href="https://www.facebook.com/<?php echo get_theme_mod('dz_email');?>" class="si-email">
+                  <span class="ts-icon"><i class="icon-email"></i></span><span class="ts-text">Email</span>
                 </a>
+               
+               <?php 
+               }
+              ?>
               </li>
+
               <li>
-                <a href="mailto:info@email.com" class="si-email3">
-                  <span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@email.com</span>
+              <?php 
+                if(get_theme_mod('dz_phone_number')){
+                ?>   
+               <a href="https://www.facebook.com/<?php echo get_theme_mod('dz_phone_number');?>" class="si-facebook">
+                  <span class="ts-icon"><i class="icon-phone"></i></span><span class="ts-text">Phone</span>
                 </a>
+               
+               <?php 
+               }
+              ?>
               </li>
+
             </ul>
           </div><!-- #top-social end -->
 
@@ -294,10 +336,13 @@ wp_head();
               <a href="#" id="top-search-trigger">
                 <i class="icon-search3"></i><i class="icon-line-cross"></i>
               </a>
-              <form action="#" method="get">
-                <input type="text" name="q" class="form-control" placeholder="Type &amp; Hit Enter.." value="">
+              <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                <input type="text" name="q" class="form-control" 
+                placeholder="<?php _e('Type &amp; Hit Enter..','dazzlesoft');?>" 
+                value="<?php the_search_query(  ); ?>">
               </form>
-            </div><!-- #top-search end -->
+            </div>
+            <!-- #top-search end -->
 
           </div>
 
