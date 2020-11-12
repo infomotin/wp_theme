@@ -291,7 +291,10 @@ wp_head();
                 }
             ?>
 
-            <!-- Top Cart
+            <?php 
+            if(get_theme_mods( 'dz_header_show_cart')){
+              ?>
+                <!-- Top Cart
             ============================================= -->
             <div id="top-cart">
               <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
@@ -328,9 +331,14 @@ wp_head();
                   </button>
                 </div>
               </div>
-            </div><!-- #top-cart end -->
-
-            <!-- Top Search
+            </div>
+            
+            <!-- #top-cart end -->
+              <?php 
+            }
+            if(get_theme_mods( 'dz_header_show_search')){
+              ?>
+                  <!-- Top Search
             ============================================= -->
             <div id="top-search">
               <a href="#" id="top-search-trigger">
@@ -343,6 +351,15 @@ wp_head();
               </form>
             </div>
             <!-- #top-search end -->
+
+              <?php
+            }
+            
+            ?>
+
+          
+
+        
 
           </div>
 
