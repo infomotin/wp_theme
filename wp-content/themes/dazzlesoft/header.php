@@ -292,7 +292,7 @@ wp_head();
             ?>
 
             <?php 
-            if(get_theme_mods( 'dz_header_show_cart')){
+            if(get_theme_mod( 'dz_header_show_cart')){
               ?>
                 <!-- Top Cart
             ============================================= -->
@@ -336,7 +336,7 @@ wp_head();
             <!-- #top-cart end -->
               <?php 
             }
-            if(get_theme_mods( 'dz_header_show_search')){
+            if(get_theme_mod( 'dz_header_show_search')){
               ?>
                   <!-- Top Search
             ============================================= -->
