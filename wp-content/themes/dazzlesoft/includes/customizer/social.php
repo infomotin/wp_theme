@@ -1,7 +1,7 @@
 <?php
 
 function dz_social_customizer_section( $wp_customize ){
-    
+
 	$wp_customize->add_setting( 'dz_facebook_hendle', array(
 		'default'                   =>  '',
 	));
@@ -24,7 +24,8 @@ function dz_social_customizer_section( $wp_customize ){
 
 	$wp_customize->add_section( 'dz_social_section', array(
 		'title'                     =>  __( 'Dazzle Social Settings', 'dazzlesoft' ),
-		'priority'                  =>  30,
+        'priority'                  =>  30,
+        'panel'                     =>'dazzle'
 		
 	));
 

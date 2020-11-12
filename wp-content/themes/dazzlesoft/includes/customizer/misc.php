@@ -2,9 +2,11 @@
 function dz_misc_customize_sections($wp_customize ){
     $wp_customize->add_setting('dz_header_show_search',[
         'default'       => 'yes',
+        'transport'     =>'postMessage'
     ]);
     $wp_customize->add_setting('dz_header_show_cart',[
         'default'       => 'yes',
+        'transport'     =>'postMessage'
     ]);
     $wp_customize->add_setting('dz_footer_copywrite_text',[
         'default'       => 'Copyrite &copy; 2020 All Rights Reserved.',
@@ -18,7 +20,8 @@ function dz_misc_customize_sections($wp_customize ){
 
     $wp_customize->add_section( 'dz_misc_section', array(
 		'title'                     =>  __( 'Dazzle Misc Settings', 'dazzlesoft' ),
-		'priority'                  =>  30,
+        'priority'                  =>  30,
+        'panel'                     =>'dazzle'
 		
     ));
     
