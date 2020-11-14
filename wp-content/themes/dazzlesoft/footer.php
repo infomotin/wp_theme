@@ -35,15 +35,35 @@
 
           <div class="col_half col_last tright">
             <div class="fright clearfix">
-              <a href="#" class="social-icon si-small si-borderless si-facebook">
+            <?php 
+            if(get_theme_mod('dz_facebook_hendle')){
+              ?>
+                <a href="https://facebook.com/<?php echo get_theme_mod('dz_facebook_hendle'); ?>" class="social-icon si-small si-borderless si-facebook">
                 <i class="icon-facebook"></i>
                 <i class="icon-facebook"></i>
               </a>
 
-              <a href="#" class="social-icon si-small si-borderless si-twitter">
+
+              <?php 
+            }
+            ?>
+
+              
+            
+
+
+<?php 
+            if(get_theme_mod('dz_twitter_handle')){
+              ?>
+                <a href="https://twitter.com/<?php echo get_theme_mod('dz_twitter_handle'); ?>" class="social-icon si-small si-borderless si-facebook">
                 <i class="icon-twitter"></i>
                 <i class="icon-twitter"></i>
               </a>
+
+
+              <?php 
+            }
+            ?>
 
             </div>
 

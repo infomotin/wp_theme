@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts','ju_enqueue');
 add_action('after_setup_theme','dz_setup_theme');
 add_action('customize_register','dz_customize_register');
 add_action('widgets_init','dz_widgets_init');
-add_action('widgets_init','dz_widgets_init2');
+// add_action('widgets_init','dz_widgets_init2');
 add_action('customize_preview_init','dz_customize_preview_init');
 
 

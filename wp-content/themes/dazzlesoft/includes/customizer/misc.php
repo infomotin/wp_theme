@@ -17,6 +17,16 @@ function dz_misc_customize_sections($wp_customize ){
     $wp_customize->add_setting('dz_footer_privacy_page',[
         'default'       => '0',
     ]);
+        //colore chang setting 
+
+    $wp_customize->add_setting('dz_colore_piker_more',[
+        'default'       => '#f0f0f0',
+    ]);
+    //colore file chang setting 
+    $wp_customize->add_setting('dz_report_file',[
+        'default'       => '',
+    ]);
+
 
     $wp_customize->add_section( 'dz_misc_section', array(
 		'title'                     =>  __( 'Dazzle Misc Settings', 'dazzlesoft' ),
@@ -85,13 +95,34 @@ function dz_misc_customize_sections($wp_customize ){
 		$wp_customize,
 		'dz_footer_privacy_page_input',
 		array(
-			'label'                 =>  __( 'Show Footer Fprivacy Page', 'dazzlesoft' ),
+			'label'                 =>  __( 'Show Footer privacy Page', 'dazzlesoft' ),
 			'section'               => 'dz_misc_section',
 			'settings'              => 'dz_footer_privacy_page',
-            'type'                  =>  'dropdown-pages',
+            // 'type'                  =>  'dropdown-pages',
             
 		)
     ));
+
+    //decliaring contrroller 
+    $wp_customize->add_control(new WP_Customize_Color_Control( 
+        $wp_customize, 
+        'dz_colore_piker_more_input', 
+        array(
+            'label'      => __( 'Read more link Color', 'dazzlesoft' ),
+            'section'    => 'your_section_id',
+            'settings'   => 'dz_colore_piker_more',
+        ) )
+    );
+    //decliaring contrroller  uploade coltroller 
+    $wp_customize->add_control(new WP_Customize_Color_Control( 
+        $wp_customize, 
+        'dz_colore_piker_more_input', 
+        array(
+            'label'      => __( 'Header Color', 'mytheme' ),
+            'section'    => 'your_section_id',
+            'settings'   => 'your_setting_id',
+        ) )
+    );
 
 
 
