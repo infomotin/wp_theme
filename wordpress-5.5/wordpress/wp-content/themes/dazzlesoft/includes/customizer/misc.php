@@ -158,13 +158,14 @@ function dz_misc_customize_sections($wp_customize ){
 
 
     //add controoller for laster news and title show 
-    $wp_customize->add_control(new WP_Customize_Upload_Control( 
+    $wp_customize->add_control(new WP_Customize_Control( 
         $wp_customize, 
         'dz_brakking_news_title_input', 
         array(
             'label'      => __( 'Bracking News Show', 'dazzlesoft' ),
             'section'    => 'dz_misc_section',
             'settings'   => 'dz_brakking_news_title',
+            'type'      => 'text',
 
         ) )
     );
