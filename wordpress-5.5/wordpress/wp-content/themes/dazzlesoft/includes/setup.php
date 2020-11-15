@@ -11,22 +11,109 @@ function dz_setup_theme(){
                 'text_business_info','search','text_about'
             ]
         ], 
+
+
         'attachments' =>[
+            'image-about'   =>[
+                'post_title'    => __('About','dazzlesoft'),
+                'file'          =>'assets/images/about/1.jpg',
+                
+            ],
 
         ],
+
+
         'posts'       =>[
+            'home'    =>[
+                'thumbnail' =>'{{image-about}}'
+            ],
+            'about'    =>[
+                'thumbnail' =>'{{image-about}}'
+            ],
+            'contact'    =>[
+                'thumbnail' =>'{{image-about}}'
+            ],
+            'blog'    =>[
+                'thumbnail' =>'{{image-about}}'
+            ],
+            'homepage-section'    =>[
+                'thumbnail' =>'{{image-about}}'
+            ],
 
         ],
+
+
+
         'options'     =>[
-
-        ], 
-        'theme_mods'  =>[
-
+            'show_on_front'  =>'page',
+            'page_on_front'  =>'{{home}}',
+            'page_for_posts' =>'{{blog}}',
         ],
+
+        
+        'theme_mods'  =>[
+            'dz_facebook_hendle' =>'dazzlesoft',
+            'dz_twitter_handle' =>'dazzlesoft',
+            'dz_instagram_handle' =>'dazzlesoft',
+            'dz_email' =>'dazzlesoft',
+            'dz_phone_number' =>'dazzlesoft',
+            'dz_header_show_search' =>'yes',
+            'dz_header_show_cart' =>'yse',
+        ],
+
+
+
         'nav_menu'    =>[
 
-        ]
 
+            'nav_menu'   =>[
+
+
+                'paimary'  =>[
+
+                    'name' => __('Primary Menu','dazzlesoft'),
+                    'items' =>[
+                        'link_home',
+                        'page_about',
+                        'page_blog',
+                        'page_contact',
+                    ],
+
+                ],
+
+                'secondary'  =>[
+
+                    'name' => __('Secondary Menu','dazzlesoft'),
+
+                    'items' =>[
+                        'link_home',
+                        'page_about',
+                        'page_blog',
+                        'page_contact',
+                    ]
+                ,
+
+
+                    ],
+
+
+                    'topheader'  =>[
+
+                        'name' => __('Topheader Menu','dazzlesoft'),
+
+                        'items' =>[
+                            'link_home',
+                            'page_about',
+                            'page_blog',
+                            'page_contact',
+                        ]
+                    ,
+    
+    
+                ]
+
+            ],
+        ]
     ]);
 
     register_nav_menu('primary',__('Primary Menu','dazzlesoft'));
