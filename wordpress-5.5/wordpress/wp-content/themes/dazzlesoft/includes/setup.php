@@ -7,7 +7,9 @@ function dz_setup_theme(){
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
     add_theme_support('starter-content',[
         'widgets'     =>[
-
+            'dz_sidebar' =>[
+                'text_business_info','search','text_about'
+            ]
         ], 
         'attachments' =>[
 
