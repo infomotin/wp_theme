@@ -6,10 +6,22 @@
       ============================================= -->
       <div id="copyrights">
 
+
+
         <div class="container clearfix">
 
           <div class="col_half">
             <?php echo get_theme_mod('dz_footer_copywrite_text'); ?><br>
+            <?php 
+              if (get_theme_mod('dz_report_file')){
+                ?>
+                  <a href="<?php echo get_theme_mod('dz_report_file');?>">Downloade Report</a>
+                <?php 
+              }
+
+            ?>
+
+
             <div class="copyright-links">
               <?php 
               if(get_theme_mod('dz_footer_privacy_page')){ 
@@ -17,20 +29,27 @@
 
                 <a href="<?php the_permalink(get_theme_mod('dz_footer_privacy_page') ); ?>">Privacy Policy</a> 
               
-              <?php
-              }
-            ?>
+                <?php
+                }
+              ?>
 
-<?php 
-              if(get_theme_mod('dz_footer_tos_page')){ 
+
+
+
+              <?php 
+                if(get_theme_mod('dz_footer_tos_page')){ 
               ?>
 
                 <a href="<?php the_permalink(get_theme_mod('dz_footer_tos_page') ); ?>">Privacy Policy Page</a> 
               
-              <?php
-              }
-            ?>
+                  <?php
+                }
+              ?>
             </div>
+            <?php 
+            
+          ?>
+
           </div>
 
           <div class="col_half col_last tright">
@@ -42,8 +61,6 @@
                 <i class="icon-facebook"></i>
                 <i class="icon-facebook"></i>
               </a>
-
-
               <?php 
             }
             ?>
@@ -52,8 +69,8 @@
             
 
 
-<?php 
-            if(get_theme_mod('dz_twitter_handle')){
+              <?php 
+              if(get_theme_mod('dz_twitter_handle')){
               ?>
                 <a href="https://twitter.com/<?php echo get_theme_mod('dz_twitter_handle'); ?>" class="social-icon si-small si-borderless si-facebook">
                 <i class="icon-twitter"></i>

@@ -98,7 +98,7 @@ function dz_misc_customize_sections($wp_customize ){
 			'label'                 =>  __( 'Show Footer privacy Page', 'dazzlesoft' ),
 			'section'               => 'dz_misc_section',
 			'settings'              => 'dz_footer_privacy_page',
-            // 'type'                  =>  'dropdown-pages',
+            'type'                  =>  'dropdown-pages',
             
 		)
     ));
@@ -109,18 +109,18 @@ function dz_misc_customize_sections($wp_customize ){
         'dz_colore_piker_more_input', 
         array(
             'label'      => __( 'Read more link Color', 'dazzlesoft' ),
-            'section'    => 'your_section_id',
+            'section'    => 'dz_misc_section',
             'settings'   => 'dz_colore_piker_more',
         ) )
     );
     //decliaring contrroller  uploade coltroller 
-    $wp_customize->add_control(new WP_Customize_Color_Control( 
+    $wp_customize->add_control(new WP_Customize_Upload_Control( 
         $wp_customize, 
-        'dz_colore_piker_more_input', 
+        'dz_report_file_input', 
         array(
-            'label'      => __( 'Header Color', 'mytheme' ),
-            'section'    => 'your_section_id',
-            'settings'   => 'your_setting_id',
+            'label'      => __( 'Header File Report', 'dazzlesoft' ),
+            'section'    => 'dz_misc_section',
+            'settings'   => 'dz_report_file',
         ) )
     );
 

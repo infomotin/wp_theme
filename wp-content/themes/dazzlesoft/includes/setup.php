@@ -3,6 +3,29 @@ function dz_setup_theme(){
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
+    add_theme_support('automatic-feed-links');
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+    add_theme_support('starter-content',[
+        'widgets'     =>[
+
+        ], 
+        'attachments' =>[
+
+        ],
+        'posts'       =>[
+
+        ],
+        'options'     =>[
+
+        ], 
+        'theme_mods'  =>[
+
+        ],
+        'nav_menu'    =>[
+
+        ]
+
+    ]);
 
     register_nav_menu('primary',__('Primary Menu','dazzlesoft'));
     register_nav_menu('secondary',__('Secondary Menu','dazzlesoft'));

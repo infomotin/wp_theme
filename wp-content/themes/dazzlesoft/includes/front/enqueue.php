@@ -13,9 +13,13 @@ function ju_enqueue(){
     wp_register_style('dz_responsive',$theme_uri.'/assets/css/responsive.css');
     wp_register_style('dz_style',$theme_uri.'/assets/css/style.css');
     // for script 
-    wp_register_script('dz_plugins',$theme_uri.'/assets/js/plugins.js',[],microtime(),true);
+    wp_register_script('dz_plugins',$theme_uri.'/assets/js/plugins.js',[],1,true);
     // wp_register_script('dz_jquery',$theme_uri.'/assets/js/jquery.js',[],microtime(),true);
-    wp_register_script('dz_functions',$theme_uri.'/assets/js/functions.js',[],microtime(),true);
+    wp_register_script('dz_functions',$theme_uri.'/assets/js/functions.js',[],1,true);
+
+    //inline css functions 
+    $get_set_default_color  = get_theme_mod('dz_colore_piker_more');
+    wp_add_inline_style( 'dz_custom', 'a.more-link{color:'.$get_set_default_color.';border-color:'.$get_set_default_color.';}');
 
     // for style
     wp_enqueue_style('dz_google_fonts');
