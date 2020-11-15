@@ -1,0 +1,282 @@
+
+<?php 
+/*Template Name: Full Width Post
+template Post Type: Post
+*/
+get_header();
+
+
+
+?>
+
+<!-- Content
+    ============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+            <div class="postcontent nobottommargin clearfix">
+                <?php
+            if (have_posts()) {
+                while (have_posts()) {
+                    the_post();
+                    global $post;
+                    $author_ID = $post->post_author;
+                    $author_URL = get_author_posts_url($author_ID);
+                    ?>
+                                <div class="single-post nobottommargin">
+
+                                    <!-- Single Post
+                        ============================================= -->
+                                    <div class="entry clearfix">
+
+                                        <!-- Entry Title
+                            ============================================= -->
+                                        <div class="entry-title">
+                                            <h2>
+                                                <?php the_title();?>
+                                            </h2>
+                                        </div>
+                                        <!-- .entry-title end -->
+
+                                        <!-- Entry Meta
+                            ============================================= -->
+                                        <ul class="entry-meta clearfix">
+                                            <li><i class="icon-calendar3"></i>
+                                                <?php the_title();?>
+                                            </li>
+                                            <li>
+                                                <a href="<?php $author_UR;?>">
+                                                    <i class="icon-user"></i>
+                                                    <?php the_author();?>
+                                                </a>
+                                            </li>
+                                            <li><i class="icon-folder-open"></i>
+                                                <?php the_category();?> </li>
+                                            <li><a href="#"><i class="icon-comments"></i><?php comments_number();?></a></li>
+                                        </ul>
+                                        <!-- .entry-meta end -->
+
+                                        <!-- Entry Image
+                            ============================================= -->
+                                        <div class="entry-image">
+
+                                            <?php
+            if (has_post_thumbnail()) {
+
+                        ?>
+
+                                                <div class="entry-image">
+                                                    <a href="<?php the_permalink();?>">
+                                                        <?php
+
+                        the_post_thumbnail('full',
+                            ['class' => 'image_fade']);
+
+                        ?>
+                                                    </a>
+                                                </div>
+
+                                                <?php
+            }
+                    ?>
+
+                                        </div>
+                                        <!-- .entry-image end -->
+
+                                        <!-- Entry Content
+                            ============================================= -->
+                                        <div class="entry-content notopmargin">
+                                            <?php the_content();
+
+                    //big post wp_link_pages funtions paramitter
+
+                    $defaults = array(
+                        'before' => '<p class="text-center">' . __('Pages:', 'Dazzlesoft'),
+                        'after' => '</p>',
+                        // 'link_before'      => '',
+                        // 'link_after'       => '',
+                        // 'aria_current'     => 'page',
+                        // 'next_or_number'   => 'number',
+                        // 'separator'        => ' ',
+                        // 'nextpagelink'     => __( 'Next page' ),
+                        // 'previouspagelink' => __( 'Previous page' ),
+                        // 'pagelink'         => '%',
+                        // 'echo'             => 1,
+                    );
+                    wp_link_pages($defaults);
+
+                    ?>
+
+
+                                            <!-- Tag Cloud
+                                ============================================= -->
+                                            <div class="tagcloud clearfix bottommargin">
+                                                <?php the_tags('', ' ');?>
+
+                                            </div>
+                                            <!-- .tagcloud end -->
+
+                                            <div class="clear"></div>
+
+                                        </div>
+                                    </div>
+                                    <!-- .entry end -->
+
+                                    <!-- Post Navigation
+                        ============================================= -->
+                                    <div class="post-navigation clearfix">
+                                        <?php previous_post_link();?>
+                                        <div class="col_half nobottommargin">
+
+                                        </div>
+
+                                        <div class="col_half col_last tright nobottommargin">
+                                            <?php next_post_link();?>
+                                        </div>
+
+                                    </div>
+                                    <!-- .post-navigation end -->
+
+                                    <div class="line"></div>
+
+                                    <!-- Post Author Info
+                        ============================================= -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong>
+                                            Posted by
+                                            <a href="<?php echo $author_URL; ?>"><?php the_author();?></a>
+                                        </strong>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="author-image">
+                                                <?php echo get_avatar($author_ID, 60, '', 'false', ['class' => 'img-circle']); ?>
+                                            </div>
+                                            <?php echo nl2br(get_the_author_meta('description')); ?>
+                                        </div>
+                                    </div>
+                                    <!-- Post Single - Author End -->
+
+
+                                    <div class="line"></div>
+
+                                    <h4>Related Posts:</h4>
+
+                                    <div class="related-posts clearfix">
+                                        <!-- Display posts from multiple authors:
+                                    $query = new WP_Query( array( 'author__in' => array( 2, 6 ) ) );
+                                    You can also exclude multiple author this way:
+                                    $query = new WP_Query( array( 'author__not_in' => array( 2, 6 ) ) );
+                                    exp :
+                                    $args = array(
+                                            'post_type' => 'post',
+                                            'tax_query' => array(
+                                            'relation' => 'OR',
+                                                array(
+                                                    'taxonomy' => 'category',
+                                                    'field'    => 'slug',
+                                                    'terms'    => array( 'quotes' ),
+                                                ),
+                                                array(
+                                                            'relation' => 'AND',
+                                                            array(
+                                                            'taxonomy' => 'post_format',
+                                                            'field'    => 'slug',
+                                                            'terms'    => array( 'post-format-quote' ),
+                                                                ),
+                                                                array(
+                                                                        'taxonomy' => 'category',
+                                                                        'field'    => 'slug',
+                                                                        'terms'    => array( 'wisdom' ),
+                                                                ),
+                                                ),
+                                            ),
+                                        );
+                                -->
+
+                                        <?php
+            // bulid releted post with category valu so we get category array of category
+                    $c_category = get_the_category();
+                    // print_r($c_category);
+                    $releted_post = new WP_Query(
+                        [
+                            'post_per_page' => 2,
+                            'post__not_in' => [
+                                $post->ID,
+                            ],
+                            'cat' => !empty($c_category) ? $c_category[0]->term_id : null,
+
+                        ]);
+
+                    if ($releted_post->have_posts()) {
+                        while ($releted_post->have_posts()) {
+                            $releted_post->the_post();
+                            ?>
+                                            <div class="mpost clearfix">
+
+                                                <?php
+            if (has_post_thumbnail()) {
+                                ?>
+                                                    <div class="entry-image">
+                                                        <a href="<?php the_permalink();?>">
+                                                            <?php the_post_thumbnail('thumbnail');?>
+                                                        </a>
+                                                    </div>
+
+                                                    <?php
+            }
+
+                            ?>
+                                                        <div class="entry-c">
+                                                            <div class="entry-title">
+                                                                <h4>
+                                                                    <a href="<?php the_permalink();?>">
+                                                                        <?php the_title();?>
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <ul class="entry-meta clearfix">
+                                                                <li><i class="icon-calendar3"></i>
+                                                                    <?php echo get_the_date(); ?> </li>
+                                                                <li><i class="icon-comments"></i>
+                                                                    <?php comments_number('0');?>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="entry-content">
+                                                                <?php the_excerpt();?>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                            <?php
+            }
+            wp_reset_postdata();
+        }
+
+        ?>
+
+                        </div>
+                        <?php
+
+        if (comments_open() || get_comment_number()) {
+            // calling comments.php
+
+            comments_template();
+        }?>
+                            <?php
+}
+}
+
+?>
+                    </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- #content end -->
+<?php get_footer();?>
