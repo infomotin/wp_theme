@@ -1,5 +1,21 @@
 <?php 
 function dz_misc_customize_sections($wp_customize ){
+    //show or hiddin siddwe setting 
+    $wp_customize->add_setting('dz_brakking_news_show',[
+        'dafault'   =>false,
+        
+        ]
+    );
+
+     //show or hiddin title setting 
+     $wp_customize->add_setting('dz_brakking_news_title',[
+        'dafault'   =>'Lastler Post',
+        
+        ]
+    );
+
+
+
     $wp_customize->add_setting('dz_header_show_search',[
         'default'       => 'yes',
         'transport'     =>'postMessage'
@@ -124,6 +140,34 @@ function dz_misc_customize_sections($wp_customize ){
         ) )
     );
 
+
+    //add controoller for laster news and title show 
+    $wp_customize->add_control(new WP_Customize_Upload_Control( 
+        $wp_customize, 
+        'dz_brakking_news_show_input', 
+        array(
+            'label'      => __( 'Backing Show Title', 'dazzlesoft' ),
+            'section'    => 'dz_misc_section',
+            'settings'   => 'dz_brakking_news_show',
+            'type'      => 'checkbox',
+            'choices'   =>[
+                'yes' => __('Yes','dazzlesoft'),
+            ]
+        ) )
+    );
+
+
+    //add controoller for laster news and title show 
+    $wp_customize->add_control(new WP_Customize_Upload_Control( 
+        $wp_customize, 
+        'dz_brakking_news_title_input', 
+        array(
+            'label'      => __( 'Bracking News Show', 'dazzlesoft' ),
+            'section'    => 'dz_misc_section',
+            'settings'   => 'dz_brakking_news_title',
+
+        ) )
+    );
 
 
 }
