@@ -23,11 +23,14 @@
 
 
  //include 
-
+include('include/activate.php');
+include('include/init.php');
+include('process/save-post.php');
 
  //hooks
-
+register_activation_hook(__FILE__,'r_activate_plugin');
+add_action('init','recipe_init');
+add_action('save_post_recipe','r_save_post_admin',10,3);
 
  //shortcodes
 
- 
