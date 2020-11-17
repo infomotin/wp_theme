@@ -13,3 +13,21 @@
  * Domain Path:       /l10n
  * GitHub Plugin URI: https://github.com/dazzlesoftbd
  */
+
+ if(!function_exists('add_action')){
+    echo " OH! No Your Are not in!";
+    exit;
+ }
+
+ //setup 
+
+
+ //include 
+
+
+ //hooks
+
+
+ //shortcodes
+
+ 
