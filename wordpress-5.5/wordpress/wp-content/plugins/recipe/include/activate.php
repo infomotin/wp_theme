@@ -6,16 +6,12 @@ function r_activate_plugin(){
 
 
 
-//crate db on wp 
+//crate table on wp db
 global $wpdb;
 $prefix = $wpdb->prefix;
 $charset_collate = "";
-
-        if ( !empty($wpdb->charset) )
-            $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} ";
-
-        if ( !empty($wpdb->collate) )
-            $charset_collate .= "COLLATE {$wpdb->collate}";
+if ( !empty($wpdb->charset) ) $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} ";
+if ( !empty($wpdb->collate) ) $charset_collate .= "COLLATE {$wpdb->collate}";
 
 $createSQl ="
 CREATE TABLE {$prefix}recipe_ratings ( 
